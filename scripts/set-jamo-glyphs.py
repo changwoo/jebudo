@@ -6,8 +6,14 @@ import sys
 import fontforge
 import unicodedata
 
+if len(sys.argv) != 2:
+    print("Usage: %s <file>..." % sys.argv[0])
+    sys.exit(1)
+
+filename = sys.argv[1]
+
 jamo_range = [unichr(c) for c in range(0x1100, 0x11FF + 1) +
-              range(0xA960, 0xA97F + 1) + range(0xD780, 0xD7FF)]
+              range(0xA960, 0xA97F + 1) + range(0xD780, 0xD7FF + 1)]
 
 # 호환자모를 NFKC 정규화하면 자모코드
 jamo_to_comp = {}
@@ -45,10 +51,17 @@ for jamo in jamo_range:
 jamo_to_comp[u'\u115F'] = u'\u3164'
 jamo_to_comp[u'\u1160'] = u'\u3164'
 
-font = fontforge.open(sys.argv[1])
+font = fontforge.open(filename)
 
-for jamo in sorted(jamo_to_comp.keys()):
-    cjamo = jamo_to_comp[jamo]
+for jamo in jamo_range:
+    try:
+        name = unicodedata.name(jamo)
+    except ValueError:
+        continue
+    if jamo_to_comp.has_key(jamo):
+        cjamo = jamo_to_comp[jamo]
+    else:
+        cjamo = u'\u3164'   # use filler instead
     try:
         glyph = font[ord(jamo)]
         print "** WARNING: U+%04X already has a glyph, skipping" % ord(jamo)
