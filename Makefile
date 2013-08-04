@@ -8,6 +8,7 @@ distdir = dist
 testsdir = tests
 
 PYTHON = python
+XGRIDFIT = xgridfit
 
 SFD := $(wildcard $(srcdir)/*.sfd)
 TTF := $(patsubst $(srcdir)/%.sfd, $(builddir)/%.ttf, $(SFD))
@@ -15,8 +16,6 @@ TTF := $(patsubst $(srcdir)/%.sfd, $(builddir)/%.ttf, $(SFD))
 TTFDIST := jebudo-ttf-$(VERSION)
 TTFDISTFILE = $(TTFDIST).tar.bz2
 EXTRA_TTF = LICENSE README
-
-GENERATECMD = $(PYTHON) $(scriptsdir)/generate.py
 
 TESTS := $(wildcard $(testsdir)/test-*.py)
 
@@ -33,9 +32,9 @@ test:
 	@for S in $(SFD); do for T in $(TESTS); do \
 	  echo $$T $$S; $(PYTHON) $$T $$S || exit 1; done done
 
-$(builddir)/%.ttf: $(srcdir)/%.sfd
+$(builddir)/%.ttf: $(srcdir)/%.sfd $(srcdir)/%.xgf
 	@install -d $(dir $@)
-	$(GENERATECMD) $< $@
+	$(XGRIDFIT) -m -f -i $< -O $(@:.ttf=.py) -o $@ $(word 2, $^)
 
 $(distdir)/$(TTFDISTFILE): build
 	@install -d $(distdir)/$(TTFDIST)

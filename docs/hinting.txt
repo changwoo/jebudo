@@ -1,0 +1,9 @@
+힌팅은 xgridfit을 사용한다.
+
+http://xgridfit.sourceforge.net/
+
+나눔글꼴에 들어 있는 힌팅은 당분간 그대로 사용해야 하기 때문에, 빌드
+과정에서 merge mode를 사용해 글꼴 중 일부분에 대한 힌팅만 추가하게
+된다.
+
+http://xgridfit.sourceforge.net/merge-mode.html
