@@ -1,0 +1,51 @@
+# 모든 한글 글꼴이 동일하게 사용하는 자모 변환
+
+lookup ccmpJamos {
+  lookupflag 0;
+    sub \uni1100 \uni1100  by \uni1101;
+    sub \uni1103 \uni1103  by \uni1104;
+    sub \uni1107 \uni1107  by \uni1108;
+    sub \uni1109 \uni1109  by \uni110A;
+    sub \uni110C \uni110C  by \uni110D;
+  subtable;
+    sub \uni1161 \uni1175  by \uni1162;
+    sub \uni1163 \uni1175  by \uni1164;
+    sub \uni1165 \uni1175  by \uni1166;
+    sub \uni1167 \uni1175  by \uni1168;
+    sub \uni1169 \uni1161 \uni1175  by \uni116B;
+    sub \uni1169 \uni1161  by \uni116A;
+    sub \uni1169 \uni1162  by \uni116B;
+    sub \uni1169 \uni1175  by \uni116C;
+    sub \uni116A \uni1175  by \uni116B;
+    sub \uni116E \uni1165 \uni1175  by \uni1170;
+    sub \uni116E \uni1165  by \uni116F;
+    sub \uni116E \uni1166  by \uni1170;
+    sub \uni116E \uni1175  by \uni1171;
+    sub \uni116F \uni1175  by \uni1170;
+    sub \uni1173 \uni1175  by \uni1174;
+  subtable;
+    sub \uni11A8 \uni11A8  by \uni11A9;
+    sub \uni11A8 \uni11BA  by \uni11AA;
+    sub \uni11AB \uni11BD  by \uni11AC;
+    sub \uni11AB \uni11C2  by \uni11AD;
+    sub \uni11AF \uni11A8  by \uni11B0;
+    sub \uni11AF \uni11B7  by \uni11B1;
+    sub \uni11AF \uni11B8  by \uni11B2;
+    sub \uni11AF \uni11BA  by \uni11B3;
+    sub \uni11AF \uni11C0  by \uni11B4;
+    sub \uni11AF \uni11C1  by \uni11B5;
+    sub \uni11AF \uni11C2  by \uni11B6;
+    sub \uni11B8 \uni11BA  by \uni11B9;
+    sub \uni11BA \uni11BA  by \uni11BB;
+} ccmpJamos;
+
+feature ccmp {
+
+  script hang;
+     language KOR  exclude_dflt;
+      lookup ccmpJamos;
+
+  script jamo;
+     language KOR  exclude_dflt;
+      lookup ccmpJamos;
+} ccmp;
