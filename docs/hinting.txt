@@ -7,3 +7,6 @@ http://xgridfit.sourceforge.net/
 된다.
 
 http://xgridfit.sourceforge.net/merge-mode.html
+
+나눔글꼴에 들어 있는 힌팅과 일관성을 위해 세로 좌표만 경계선에 맞춘다.
+즉 <with-vectors axis="y"> 만 사용.

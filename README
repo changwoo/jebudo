@@ -32,6 +32,8 @@
 목표
 ----
 
+- freetype, fontconfig의 기능을 적극 사용할 수 있게 한다.
+
 - 유니코드 한글에서 표현할 수 있는 범위를 충실히 구현한다.
 
 - DejaVu 등 기존 글꼴과 잘 어울리도록 한다.
@@ -76,3 +78,13 @@ https://github.com/changwoo/jebudo
 - 토론 메일링 리스트
 
 https://groups.google.com/group/jebudo-fonts
+
+
+빌드
+----
+
+- fontforge
+
+- python
+
+- xgridfit
