@@ -18,27 +18,10 @@
     <constant name="last" value="13" />
 
     <constant name="right-top" value="2" />
-    <constant name="right-bottom" value="11" />
-    <constant name="left-bottom" value="8" />
-    <constant name="left-top" value="5" />
+    <constant name="right-bottom" value="10" />
+    <constant name="left-bottom" value="9" />
+    <constant name="left-top" value="3" />
 
-    <with-vectors axis="x">
-      <move distance="left-sidebearing-length">
-        <reference>
-          <point num="left-sidebearing"/>
-        </reference>
-        <point num="left-top"/>
-        <move distance="line-width">
-          <point num="right-top"/>
-        </move>
-        <move distance="width">
-          <point num="left-bottom"/>
-          <move distance="line-width">
-            <point num="right-bottom"/>
-          </move>
-        </move>
-      </move>
-    </with-vectors>
     <with-vectors axis="y">
       <move distance="bottom">
         <point num="right-bottom"/>
