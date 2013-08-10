@@ -2,11 +2,20 @@
 
 http://xgridfit.sourceforge.net/
 
+---
+
 나눔글꼴에 들어 있는 힌팅은 당분간 그대로 사용해야 하기 때문에, 빌드
 과정에서 merge mode를 사용해 글꼴 중 일부분에 대한 힌팅만 추가하게
 된다.
 
 http://xgridfit.sourceforge.net/merge-mode.html
 
+---
+
 나눔글꼴에 들어 있는 힌팅과 일관성을 위해 세로 좌표만 경계선에 맞춘다.
 즉 <with-vectors axis="y"> 만 사용.
+
+---
+
+src/hintings/*.xgf 파일에 저장하고, src/hintings/*.sfd 파일에 생성된
+결과물을 저장한다.
