@@ -1,25 +1,26 @@
 <?xml version="1.0"?>
-<xgridfit xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+<xgridfit xmlns="http://xgridfit.sourceforge.net/Xgridfit2"
+          xmlns:xi="http://www.w3.org/2001/XInclude" >
   <constant name="left-sidebearing" value="last + 1"/>
   <constant name="right-sidebearing" value="last + 2"/>
 
-    <control-value name="left-sidebearing-length" value="121"/>    
-    <control-value name="right-sidebearing-length" value="122"/>    
-    <control-value name="line-width" value="56"/>    
+    <control-value name="left-sidebearing-length" value="4"/>    
+    <control-value name="right-sidebearing-length" value="0"/>    
+    <control-value name="line-width" value="114"/>    
     <control-value name="width" value="213"/>    
-    <control-value name="height" value="840"/>
-    <control-value name="bottom" value="-36"/>
+    <control-value name="height" value="849"/>
+    <control-value name="bottom" value="-124"/>
 
   <pre-program>
   </pre-program>
 
   <glyph ps-name="backslash">
-    <constant name="last" value="3" />
+    <constant name="last" value="13" />
 
-    <constant name="right-top" value="0" />
-    <constant name="right-bottom" value="1" />
-    <constant name="left-bottom" value="2" />
-    <constant name="left-top" value="3" />
+    <constant name="right-top" value="2" />
+    <constant name="right-bottom" value="11" />
+    <constant name="left-bottom" value="8" />
+    <constant name="left-top" value="5" />
 
     <with-vectors axis="x">
       <move distance="left-sidebearing-length">
@@ -52,6 +53,6 @@
         </move>
       </move>
     </with-vectors>
+    <interpolate-untouched-points/>
   </glyph>
 </xgridfit>
-

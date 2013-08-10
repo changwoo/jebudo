@@ -32,7 +32,7 @@ test:
 	@for S in $(SFD); do for T in $(TESTS); do \
 	  echo $$T $$S; $(PYTHON) $$T $$S || exit 1; done done
 
-$(builddir)/%.ttf: $(srcdir)/%.sfd $(srcdir)/%.xgf
+$(builddir)/%.ttf: $(srcdir)/%.sfd $(srcdir)/hintings/%.xgf
 	@install -d $(dir $@)
 	$(XGRIDFIT) -m -f -i $< -O $(@:.ttf=.py) -o $@ $(word 2, $^)
 
