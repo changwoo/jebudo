@@ -4,37 +4,6 @@
   <constant name="left-sidebearing" value="last + 1"/>
   <constant name="right-sidebearing" value="last + 2"/>
 
-    <control-value name="left-sidebearing-length" value="126"/>    
-    <control-value name="right-sidebearing-length" value="127"/>    
-    <control-value name="line-width" value="46"/>    
-    <control-value name="width" value="213"/>    
-    <control-value name="height" value="840"/>
-    <control-value name="bottom" value="-36"/>
-
   <pre-program>
   </pre-program>
-
-  <glyph ps-name="backslash">
-    <constant name="last" value="3" />
-
-    <constant name="right-top" value="0" />
-    <constant name="right-bottom" value="1" />
-    <constant name="left-bottom" value="2" />
-    <constant name="left-top" value="3" />
-
-    <with-vectors axis="y">
-      <move distance="bottom">
-        <point num="right-bottom"/>
-        <move distance="height">
-          <point num="right-top"/>
-        </move>
-      </move>
-      <move distance="bottom">
-        <point num="left-bottom"/>
-        <move distance="height">
-          <point num="left-top"/>
-        </move>
-      </move>
-    </with-vectors>
-  </glyph>
 </xgridfit>
