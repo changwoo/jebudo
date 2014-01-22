@@ -14,5 +14,5 @@ fontforge.setPrefs("FoundryName", "Jebudo")
 fontforge.setPrefs("TTFFoundry", "Jebudo")
 
 font = fontforge.open(infilename)
-font.generate(outfilename, "", [])
+font.generate(outfilename, flags = ('opentype'))
 font.close
